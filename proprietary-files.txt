@@ -1,0 +1,40 @@
+# ANT+
+lib64/com.qualcomm.qti.ant@1.0.so
+-lib64/libantradio.so
+lib/com.qualcomm.qti.ant@1.0.so
+-lib/libantradio.so
+
+# Bluetooth (aptX)
+lib64/libaptX_encoder.so
+lib64/libaptXHD_encoder.so
+
+# DASH
+-sbin/dashd;rootfs
+
+# HotwordEnrollment
+-priv-app/HotwordEnrollmentOKGoogleWCD9340/HotwordEnrollmentOKGoogleWCD9340.apk
+-priv-app/HotwordEnrollmentXGoogleWCD9340/HotwordEnrollmentXGoogleWCD9340.apk
+
+# HWComposer override
+lib64/hw/hwcomposer.sdm845.so|8e6389a1ddae937c8e5b71c5d57026a29212e5c5
+
+# IMS
+-app/ims/ims.apk
+lib64/libdiag_system.so
+lib64/libimscamera_jni.so
+lib64/libimsmedia_jni.so
+lib64/lib-imsvideocodec.so
+lib64/lib-imsvtextutils.so
+lib64/lib-imsvt.so
+lib64/lib-imsvtutils.so
+lib64/librcc.so
+lib64/vendor.qti.imsrtpservice@1.0.so
+
+# Telephony
+-app/QtiTelephonyService/QtiTelephonyService.apk
+etc/permissions/qcrilhook.xml
+etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
+etc/permissions/qti_permissions.xml
+etc/permissions/privapp-permissions-qti.xml
+framework/qcrilhook.jar
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
