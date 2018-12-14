@@ -17,7 +17,6 @@
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/oneplus/sdm845-common/sdm845-common-vendor.mk)
 $(call inherit-product, vendor/oneplus/SDM845/prebuilts.mk)
-#$(call inherit-product, vendor/oneplus/SDM845/Android.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -77,10 +76,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libvulkan
 
-# Doze
-PRODUCT_PACKAGES += \
-    OnePlusDoze
-
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:system/etc/permissions/privapp-permissions-hotword.xml
@@ -125,7 +120,8 @@ PRODUCT_PACKAGES += \
     OnePlusCameraService
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/addon.d/51-oneplus-camera.sh:system/addon.d/51-oneplus-camera.sh
+    $(LOCAL_PATH)/prebuilts/addon.d/51-oneplus-camera.sh:system/addon.d/51-oneplus-camera.sh  \
+    $(LOCAL_PATH)/prebuilts/etc/permissions/privapp-permissions-oem.xml:system/etc/permissions/privapp-permissions-oem.xml
 
 # QTI
 PRODUCT_COPY_FILES += \
@@ -153,4 +149,5 @@ PRODUCT_PACKAGES += \
     qti-telephony-common
     
  PRODUCT_BOOT_JARS += \
-    telephony-ext
+    telephony-ext \
+    WfdCommon
