@@ -23,6 +23,10 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lineage
 
+# Permissions
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
+
 # Properties
 -include $(LOCAL_PATH)/system_prop.mk
 
@@ -79,6 +83,17 @@ PRODUCT_PACKAGES += \
 # Doze
 PRODUCT_PACKAGES += \
     OnePlusDoze
+
+# Fingerprint sensor
+PRODUCT_PACKAGES += \
+    libpowermanager.vendor
+
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_msm8998
+
+# For config.fs
+PRODUCT_PACKAGES += \
+    fs_config_files
 
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \

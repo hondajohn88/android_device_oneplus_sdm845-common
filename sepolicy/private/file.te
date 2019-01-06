@@ -9,3 +9,12 @@ type proc_touchpanel, fs_type;
 type sysfs_oem, sysfs_type, fs_type;
 type sysfs_battery_supply, sysfs_type, fs_type;
 type sysfs_graphics_panelmode, sysfs_type, fs_type;
+
+# Fingerprint
+type fingerprint_data_file, data_file_type, file_type, core_data_file_type;
+type fingerprint_persist_file, file_type;
+type fingerprint_sysfs, sysfs_type, fs_type;
+
+# Input devices
+type idc_file, file_type, vendor_file_type;
+type keylayout_file, file_type, vendor_file_type;
