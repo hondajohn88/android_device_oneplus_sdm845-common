@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service.xiaomi_msm8998"
+#define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service.oneplus"
 
 #include <android/log.h>
 #include <hidl/HidlTransportSupport.h>
@@ -27,6 +27,7 @@ using android::hardware::joinRpcThreadpool;
 
 // Generated HIDL files
 using android::hardware::biometrics::fingerprint::V2_1::IBiometricsFingerprint;
+using android::hardware::biometrics::fingerprint::V1_0::IVendorFingerprintExtensions;
 using android::hardware::biometrics::fingerprint::V2_1::implementation::BiometricsFingerprint;
 
 int main() {

@@ -14,10 +14,10 @@
 // limitations under the License.
 
 cc_binary {
-    name: "android.hardware.biometrics.fingerprint@2.1-service.xiaomi_msm8998",
+    name: "android.hardware.biometrics.fingerprint@2.1-service.oneplus",
     relative_install_path: "hw",
     defaults: ["hidl_defaults"],
-    init_rc: ["android.hardware.biometrics.fingerprint@2.1-service.xiaomi_msm8998.rc"],
+    init_rc: ["android.hardware.biometrics.fingerprint@2.1-service.oneplus.rc"],
     srcs: ["service.cpp", "BiometricsFingerprint.cpp"],
     shared_libs: [
         "libbase",
@@ -28,6 +28,7 @@ cc_binary {
         "liblog",
         "libutils",
         "android.hardware.biometrics.fingerprint@2.1",
+        "vendor.oneplus.fingerprint.extension@1.0",
     ],
     proprietary: true,
 }
