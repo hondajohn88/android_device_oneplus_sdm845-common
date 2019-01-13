@@ -11,7 +11,6 @@
 
 # Fingerprint
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.xiaomi_msm8998 u:object_r:hal_fingerprint_default_exec:s0
-/dev/qbt1000		                                      u:object_r:qbt1000_device:s0
 /dev/goodix                                                   u:object_r:fingerprint_device:s0
 /data/fpc(/.*)?                                               u:object_r:fingerprint_data_file:s0
 /data/fpc_images(/.*)?                                        u:object_r:fingerprint_data_file:s0

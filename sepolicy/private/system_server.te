@@ -3,3 +3,6 @@ allow system_server sysfs_graphics_panelmode:dir search;
 
 # Fingerprint
 allow system_server fingerprint_sysfs:file rw_file_perms;
+
+# Pocketservice
+allow system_server pocket_service:service_manager { add find };
