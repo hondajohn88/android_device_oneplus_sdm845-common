@@ -110,6 +110,9 @@ FRAMEWORK_MATRIX_FILE := $(COMMON_PATH)/vendor_framework_compatibility_matrix.xm
 JAVA_SOURCE_OVERLAYS := \
     org.lineageos.hardware|$(COMMON_PATH)/lineagehw|**/*.java
 
+# NFC
+TARGET_USES_NQ_NFC := true
+
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 BOARD_DTBOIMG_PARTITION_SIZE := 8388608
