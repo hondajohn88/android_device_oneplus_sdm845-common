@@ -72,10 +72,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     CameraPackage
 
-# Device
-PRODUCT_PACKAGES += \
-    DeviceParts
-
 # Display
 PRODUCT_PACKAGES += \
     libvulkan
@@ -83,6 +79,13 @@ PRODUCT_PACKAGES += \
 # Doze
 PRODUCT_PACKAGES += \
     OnePlusDoze
+
+# Fingerprint sensor
+PRODUCT_PACKAGES += \
+    libpowermanager.vendor
+
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1-service.oneplus_sdm845
 
 # For config.fs
 PRODUCT_PACKAGES += \
@@ -117,11 +120,7 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.1 \
-    android.hardware.nfc@1.0
-
-# NXP
-PRODUCT_PACKAGES += \
+    NfcNci \
     Tag \
     com.android.nfc_extras
 
@@ -167,3 +166,8 @@ PRODUCT_PACKAGES += \
  PRODUCT_BOOT_JARS += \
     telephony-ext \
     WfdCommon
+
+# tri-state-key
+PRODUCT_PACKAGES += \
+    KeyHandler \
+    tri-state-key_daemon

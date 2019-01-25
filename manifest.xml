@@ -27,19 +27,6 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>vendor.oneplus.fingerprint.extension@1.0</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IVendorFingerprintExtensions</name>
-            <instance>default</instance>
-        </interface>
-        <interface>
-            <name>IVendorFingerprintExtensionsCallback</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.bluetooth</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -399,15 +386,6 @@
         <version>1.0</version>
         <interface>
             <name>IGoodixBiometricsFingerprint</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.oneplus.fingerprint.extension</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IVendorFingerprintExtensions</name>
             <instance>default</instance>
         </interface>
     </hal>
