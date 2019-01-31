@@ -48,7 +48,11 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 NEED_KERNEL_MODULE_SYSTEM := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/oneplus/sdm845
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+
+# Linaro
+KERNEL_TOOLCHAIN := /home/hondajohn88/OP6T-superior/prebuilts/gcc/linux-x86/aarch64/gcc-linaro-6.1.1/bin
+KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-gnu-
 
 # Platform
 # TARGET_BOARD_PLATFORM := sdm845
@@ -121,6 +125,10 @@ TARGET_USES_MKE2FS := true
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_USE_SDCLANG := true
+SDCLANG_LTO_DEFS := device/qcom/common/sdllvm-lto-defs.mk
+
+SDCLANG := true
+SDCLANG_PATH := prebuilts/clang/snapdragon-llvm-6.0.2-linux64/toolchains/llvm-Snapdragon_LLVM_for_Android_6.0/prebuilt/linux-x86_64/bin
 
 # Root
 BOARD_ROOT_EXTRA_FOLDERS := odm op1 op2
