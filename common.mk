@@ -66,7 +66,8 @@ PRODUCT_PACKAGES_DEBUG += \
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.qcom.rc \
-    init.recovery.qcom.rc
+    init.recovery.qcom.rc \
+    ueventd.qcom.rc
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -79,13 +80,6 @@ PRODUCT_PACKAGES += \
 # Doze
 PRODUCT_PACKAGES += \
     OnePlusDoze
-
-# Fingerprint sensor
-PRODUCT_PACKAGES += \
-    libpowermanager.vendor
-
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.oneplus_sdm845
 
 # For config.fs
 PRODUCT_PACKAGES += \
