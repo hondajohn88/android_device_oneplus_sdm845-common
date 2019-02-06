@@ -50,8 +50,8 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/oneplus/sdm845
 #TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
-# Linaro
-KERNEL_TOOLCHAIN := /home/hondajohn88/OP6T-superior/prebuilts/gcc/linux-x86/aarch64/gcc-linaro-6.1.1/bin
+# GCC
+KERNEL_TOOLCHAIN := /home/hondajohn88/OP6T-superior/prebuilts/gcc/linux-x86/aarch64/gcc-arm-8.2/bin
 KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-gnu-
 
 # Platform
