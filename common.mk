@@ -29,6 +29,7 @@ PRODUCT_COPY_FILES += \
 
 # Properties
 -include $(LOCAL_PATH)/system_prop.mk
+-include $(LOCAL_PATH)/vendor_prop.mk
 
 # A/B
 AB_OTA_UPDATER := true
