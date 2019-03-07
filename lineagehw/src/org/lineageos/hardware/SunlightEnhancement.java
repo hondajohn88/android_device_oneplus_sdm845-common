@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2018 The LineageOS Project
+ * Copyright (C) 2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 
 package org.lineageos.hardware;
 
+import android.os.Build;
 import android.util.Log;
 
 import org.lineageos.internal.util.FileUtils;
@@ -24,8 +25,24 @@ import org.lineageos.internal.util.FileUtils;
 public class SunlightEnhancement {
     private static final String TAG = "SunlightEnhancement";
 
-    private static final String HBM_PATH =
-            "/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/main_display/hbm";
+    private static final String DISP_PARAM_PATH =
+            "/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/disp_param";
+    private static final String HBM_STATUS_PATH =
+            "/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/hbm_status";
+
+    private static final String DISP_PARAM_HBM_OFF = "0xF0000";
+    private static final String DISP_PARAM_HBM_ON = "0x10000";
+    private static final String DISP_PARAM_HBM_FOD_OFF = "0xE0000";
+    private static final String DISP_PARAM_HBM_FOD_ON = "0x20000";
+
+    private static boolean hasAmoledPanel() {
+        return Build.DEVICE.equals("dipper") || Build.DEVICE.equals("equuleus") ||
+                Build.DEVICE.equals("perseus") || Build.DEVICE.equals("ursa");
+    }
+
+    private static boolean hasFingerprintOnDisplay() {
+        return Build.DEVICE.equals("equuleus") || Build.DEVICE.equals("ursa");
+    }
 
     /**
      * Whether device supports sunlight enhancement
@@ -33,7 +50,8 @@ public class SunlightEnhancement {
      * @return boolean Supported devices must return always true
      */
     public static boolean isSupported() {
-        return FileUtils.isFileWritable(HBM_PATH);
+        return hasAmoledPanel() && FileUtils.isFileWritable(DISP_PARAM_PATH) &&
+                FileUtils.isFileReadable(HBM_STATUS_PATH);
     }
 
     /**
@@ -44,7 +62,7 @@ public class SunlightEnhancement {
      */
     public static boolean isEnabled() {
         try {
-            return Integer.parseInt(FileUtils.readOneLine(HBM_PATH)) > 0;
+            return Integer.parseInt(FileUtils.readOneLine(HBM_STATUS_PATH)) > 0;
         } catch (Exception e) {
             Log.e(TAG, e.getMessage(), e);
         }
@@ -59,7 +77,12 @@ public class SunlightEnhancement {
      * failed; true in any other case.
      */
     public static boolean setEnabled(boolean status) {
-        return FileUtils.writeLine(HBM_PATH, status ? "3" : "0");
+        if (hasFingerprintOnDisplay()) {
+            return FileUtils.writeLine(DISP_PARAM_PATH, status ?
+                    DISP_PARAM_HBM_FOD_ON : DISP_PARAM_HBM_FOD_OFF);
+        }
+        return FileUtils.writeLine(DISP_PARAM_PATH, status ?
+                DISP_PARAM_HBM_ON : DISP_PARAM_HBM_OFF);
     }
 
     /**

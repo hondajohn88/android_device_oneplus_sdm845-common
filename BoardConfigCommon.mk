@@ -99,6 +99,7 @@ TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 # HIDL
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
+FRAMEWORK_MATRIX_FILE := $(COMMON_PATH)/vendor_framework_compatibility_matrix.xml
 
 # Lineage Hardware
 JAVA_SOURCE_OVERLAYS := \
@@ -128,7 +129,7 @@ TARGET_USE_SDCLANG := true
 SDCLANG_LTO_DEFS := device/qcom/common/sdllvm-lto-defs.mk
 
 SDCLANG := true
-SDCLANG_PATH := prebuilts/clang/snapdragon-llvm-6.0.2-linux64/toolchains/llvm-Snapdragon_LLVM_for_Android_6.0/prebuilt/linux-x86_64/bin
+SDCLANG_PATH := prebuilts/clang/snapdragon-llvm-6.0.9-linux64/toolchains/llvm-Snapdragon_LLVM_for_Android_6.0/prebuilt/linux-x86_64/bin
 
 # Root
 BOARD_ROOT_EXTRA_FOLDERS := odm op1 op2

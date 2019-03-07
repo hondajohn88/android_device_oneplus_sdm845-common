@@ -13,7 +13,6 @@
 /system/etc/audio_policy_configuration.xml    u:object_r:vendor_configs_file:s0
 
 # Fingerprint
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service		u:object_r:hal_fingerprint_default_exec:s0
 /dev/goodix_fp		                                      u:object_r:fingerprintd_device:s0
 /dev/silead_fp		                                      u:object_r:fingerprintd_device:s0
 /data/fpc(/.*)?                                               u:object_r:fingerprint_data_file:s0
@@ -24,6 +23,9 @@
 /persist/fpc(/.*)?                                            u:object_r:fingerprint_persist_file:s0
 /persist/goodix(/.*)?                                         u:object_r:fingerprint_persist_file:s0
 /sys/devices/soc/soc:fingerprint_fpc(/.*)?                    u:object_r:fingerprint_sysfs:s0
+
+# Graphics nodes
+/sys/devices/platform/soc/ae00000\.qcom,mdss_mdp/drm/card0/card0-DSI-1/hbm_status     u:object_r:sysfs_graphics:s0
 
 # Lights
 /system/bin/hw/android\.hardware\.light@2\.0-service\.oneplus_sdm845    u:object_r:hal_light_sdm845_exec:s0

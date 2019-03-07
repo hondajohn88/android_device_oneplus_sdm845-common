@@ -9,3 +9,5 @@ com.fingerprints.extension::IFingerprintNavigation            u:object_r:hal_fin
 com.fingerprints.extension::IFingerprintCalibration           u:object_r:hal_fingerprint_hwservice:s0
 com.fingerprints.extension::IFingerprintSenseTouch            u:object_r:hal_fingerprint_hwservice:s0
 com.fingerprints.extension::IFingerprintRecalibration         u:object_r:hal_fingerprint_hwservice:s0
+
+vendor.lineage.power::ILineagePower      u:object_r:hal_lineage_power_hwservice:s0
