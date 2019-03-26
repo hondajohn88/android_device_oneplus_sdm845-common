@@ -24,7 +24,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    camera.disable_zsl_mode=true
+    camera.disable_zsl_mode=true \
+    persist.vendor.color.matrix=2
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
